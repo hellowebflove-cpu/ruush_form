@@ -1,0 +1,40 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]: "-РУУУШ+"
+      - generic [ref=e5]:
+        - button "Увійти" [ref=e6]
+        - button "Menu" [ref=e7]:
+          - img [ref=e8]
+    - main [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - heading "Рахунок створено" [level=1] [ref=e41]
+          - paragraph [ref=e13]: Рахунок для ТОВ "Рушій Змін" створено. Очікуйте лист із деталями на вашу електронну пошту.
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: Курс
+            - generic [ref=e45]: Поведінкова наука
+          - generic [ref=e46]:
+            - generic [ref=e47]: Юр. особа
+            - generic [ref=e48]: ТОВ "Рушій Змін"
+          - generic [ref=e49]:
+            - generic [ref=e50]: Сума
+            - generic [ref=e51]: 27 500 грн
+          - generic [ref=e52]:
+            - generic [ref=e53]: Статус
+            - generic [ref=e54]: Очікує оплати
+        - paragraph [ref=e19]: Якщо вам необхідно створити договір, або індивідуалізувати рахунок напишіть нам на пошту finance@ruuush.marketing
+        - button "На головну" [active] [ref=e55]
+        - generic [ref=e21]:
+          - paragraph [ref=e22]: Маєте запитання? Будемо раді поспілкуватися
+          - generic [ref=e23]:
+            - link "WhatsApp" [ref=e24] [cursor=pointer]:
+              - /url: https://wa.me/
+              - img [ref=e25]
+            - link "Email" [ref=e27] [cursor=pointer]:
+              - /url: mailto:finance@ruuush.marketing
+              - img [ref=e28]
+  - button "Open Next.js Dev Tools" [ref=e36] [cursor=pointer]:
+    - img [ref=e37]
+  - alert [ref=e40]

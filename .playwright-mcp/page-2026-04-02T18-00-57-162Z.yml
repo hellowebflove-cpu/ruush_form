@@ -1,0 +1,30 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]: "-РУУУШ+"
+      - generic [ref=e5]:
+        - button "Увійти" [ref=e6]
+        - button "Menu" [ref=e7]:
+          - img [ref=e8]
+    - main [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - heading "Створення рахунку" [level=1] [ref=e12]
+          - paragraph [ref=e13]: Вкажіть назву юридичної особи, на яку необхідно створити рахунок
+        - generic [ref=e16]:
+          - textbox "Юр. особа" [active] [ref=e17]
+          - generic [ref=e18]: "*"
+        - paragraph [ref=e19]: Якщо вам необхідно створити договір, або індивідуалізувати рахунок напишіть нам на пошту finance@ruuush.marketing
+        - button "Створити рахунок" [ref=e20]
+        - generic [ref=e21]:
+          - paragraph [ref=e22]: Маєте запитання? Будемо раді поспілкуватися
+          - generic [ref=e23]:
+            - link "WhatsApp" [ref=e24] [cursor=pointer]:
+              - /url: https://wa.me/
+              - img [ref=e25]
+            - link "Email" [ref=e27] [cursor=pointer]:
+              - /url: mailto:finance@ruuush.marketing
+              - img [ref=e28]
+  - button "Open Next.js Dev Tools" [ref=e36] [cursor=pointer]:
+    - img [ref=e37]
+  - alert [ref=e40]

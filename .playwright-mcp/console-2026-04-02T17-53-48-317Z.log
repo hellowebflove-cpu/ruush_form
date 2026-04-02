@@ -1,0 +1,684 @@
+[      99ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[     109ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[     254ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[     451ms] [LOG] [Fast Refresh] done in 299ms @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[    3124ms] [WARNING] The resource http://localhost:3000/_next/static/media/b3b0afff8ab38d95-s.p.0_6z8bw5fnpp2.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/register/invoice:0
+[    3124ms] [WARNING] The resource http://localhost:3000/_next/static/media/2f13ad8e538108e0-s.p.0o52u8sd-fo14.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/register/invoice:0
+[  250169ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  250277ms] [LOG] [Fast Refresh] done in 184ms @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  255956ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  255984ms] [LOG] [Fast Refresh] done in 28ms @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  277053ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  277263ms] [LOG] [Fast Refresh] done in 100ms @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  277983ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  278182ms] [LOG] [Fast Refresh] done in 300ms @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  278286ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  278390ms] [LOG] [Fast Refresh] done in 205ms @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  287787ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  287815ms] [LOG] [Fast Refresh] done in 44ms @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  331949ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  332452ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:3272
+[  332452ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:3272
+[  332511ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:3272
+[  332511ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:3272
+[  332613ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  332796ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:3272
+[  332797ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:3272
+[  332797ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/register/invoice?_rsc=w2oxe:0
+[  332826ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/register/invoice?_rsc=w2oxe:0
+[  332903ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/register/invoice:0
+[  333025ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0_sn_react-dom_0-x1ex.._.js:15305
+[  333068ms] Error: ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at Object.getCompilationErrors (file:///Users/vladmac/Documents/ruush_form/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/vladmac/Documents/ruush_form/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/vladmac/Documents/ruush_form/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/vladmac/Documents/ruush_form/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/vladmac/Documents/ruush_form/node_modules/next/dist/server/base-server.js:1745:26)
+[  333065ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1226
+[  333068ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  333068ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  333101ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  333101ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  333150ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  333150ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  333217ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1226
+[  336015ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  336015ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  336052ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  336052ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  336116ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1226
+[  336972ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  336972ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  337012ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1226
+[  337097ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  337097ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  337146ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1226
+[  337310ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  337310ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  337419ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1226
+[  337444ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  337444ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  340248ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  340248ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  340302ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1226
+[  340523ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:146:32
+Module not found: Can't resolve 'html2canvas'
+  144 |     if (!el) return;
+  145 |
+> 146 |     const html2canvas = (await import("html2canvas")).default;
+      |                                ^^^^^^^^^^^^^^^^^^^^^
+  147 |     const { jsPDF } = await import("jspdf");
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  340523ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  340579ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1226
+[  340820ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1226
+[  340943ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/register/invoice:0
+[  340980ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0_sn_react-dom_0-x1ex.._.js:15305
+[  341005ms] Error: ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at Object.getCompilationErrors (file:///Users/vladmac/Documents/ruush_form/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/vladmac/Documents/ruush_form/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/vladmac/Documents/ruush_form/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/vladmac/Documents/ruush_form/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/vladmac/Documents/ruush_form/node_modules/next/dist/server/base-server.js:1745:26)
+[  341073ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1226
+[  341082ms] [ERROR] ./Documents/ruush_form/src/app/register/invoice/page.tsx:147:29
+Module not found: Can't resolve 'jspdf'
+  145 |
+  146 |     const html2canvas = (await import("html2canvas")).default;
+> 147 |     const { jsPDF } = await import("jspdf");
+      |                             ^^^^^^^^^^^^^^^
+  148 |
+  149 |     const canvas = await html2canvas(el, {
+  150 |       scale: 2,
+
+Import traces:
+  Client Component Browser:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component Browser]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Client Component SSR]
+    ./Documents/ruush_form/src/app/register/invoice/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_063xgs~._.js:1945
+[  342687ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  342705ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  359600ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=5fVQFWAgXWBGNQANvEPHc' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_client_0k5187g._.js:13299
+[  360813ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  361161ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431
+[  361177ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0_sn_next_dist_0x1ko-n._.js:2431

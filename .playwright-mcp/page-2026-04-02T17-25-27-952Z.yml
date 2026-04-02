@@ -1,0 +1,17 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]: "-РУУУШ+"
+      - generic [ref=e5]:
+        - button "Увійти" [ref=e6]
+        - button "Menu" [ref=e7]:
+          - img [ref=e8]
+    - main [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - heading "Дякуємо" [level=1] [ref=e12]
+          - paragraph [ref=e13]: Ми зв’яжемось з вами найближчим часом
+        - button "На головну" [ref=e14]
+  - button "Open Next.js Dev Tools" [ref=e20] [cursor=pointer]:
+    - img [ref=e21]
+  - alert [ref=e24]

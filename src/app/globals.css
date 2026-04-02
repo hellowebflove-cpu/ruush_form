@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #0F0E0F;
+  --color-bg-input: #1E1D1D;
+  --color-accent: #E74C41;
+  --color-text: #D0CAC3;
+  --color-text-white: #FFFFFF;
+  --color-text-muted: #8A8A8A;
+  --color-border: #333333;
+  --color-border-error: #E74C41;
+  --font-mono: var(--font-roboto-mono);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+/* Autofill fix for dark inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-bg-input) inset;
+  -webkit-text-fill-color: var(--color-text);
+  transition: background-color 5000s ease-in-out 0s;
+}

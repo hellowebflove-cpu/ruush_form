@@ -1,0 +1,39 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]: "-РУУУШ+"
+      - generic [ref=e5]:
+        - button "Увійти" [ref=e6]
+        - button "Menu" [ref=e7]:
+          - img [ref=e8]
+    - main [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - heading "Реєстрація" [level=1] [ref=e12]
+          - paragraph [ref=e13]: Курс “Як використовувати поведінкову науку, щоб змінювати поведінку людей”
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - generic [ref=e16]:
+              - generic [ref=e17]:
+                - textbox "Ім'я" [active] [ref=e18]
+                - generic [ref=e19]: "*"
+              - paragraph [ref=e45]: Ви не заповнили обов'язкове поле
+            - generic [ref=e20]:
+              - generic [ref=e21]:
+                - textbox "Телефон" [ref=e22]
+                - generic [ref=e23]: "*"
+              - paragraph [ref=e46]: Ви не заповнили обов'язкове поле
+            - generic [ref=e24]:
+              - generic [ref=e25]:
+                - textbox "Email" [ref=e26]
+                - generic [ref=e27]: "*"
+              - paragraph [ref=e47]: Ви не заповнили обов'язкове поле
+          - generic [ref=e28]:
+            - generic [ref=e29] [cursor=pointer]:
+              - checkbox "Погоджуюсь з Умовами конфіденційності та Правилами сервісу та Підпискою на новини" [ref=e31]
+              - generic [ref=e33]: Погоджуюсь з Умовами конфіденційності та Правилами сервісу та Підпискою на новини
+            - paragraph [ref=e48]: Потрібна ваша згода
+          - button "Зареєструватись" [ref=e34]
+  - button "Open Next.js Dev Tools" [ref=e40] [cursor=pointer]:
+    - img [ref=e41]
+  - alert [ref=e44]

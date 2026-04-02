@@ -1,0 +1,76 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]: "-РУУУШ+"
+      - generic [ref=e5]:
+        - button "Увійти" [ref=e6]
+        - button "Menu" [ref=e7]:
+          - img [ref=e8]
+    - main [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - heading "Рахунок створено" [level=1] [ref=e41]
+          - paragraph [ref=e13]: Завантажте рахунок або поділіться ним
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]:
+              - paragraph [ref=e45]: РУУУШ
+              - paragraph [ref=e46]: ruuush.marketing
+            - generic [ref=e47]:
+              - paragraph [ref=e48]: РАХУНОК
+              - paragraph [ref=e49]: INV-20260402-001
+          - generic [ref=e50]:
+            - generic [ref=e51]:
+              - paragraph [ref=e52]: Дата
+              - paragraph [ref=e53]: 02.04.2026
+            - generic [ref=e54]:
+              - paragraph [ref=e55]: Оплатити до
+              - paragraph [ref=e56]: 09.04.2026
+          - generic [ref=e57]:
+            - paragraph [ref=e58]: Платник
+            - paragraph [ref=e59]: ТОВ "Рушій Змін"
+            - paragraph
+            - paragraph
+            - paragraph
+          - table [ref=e60]:
+            - rowgroup [ref=e61]:
+              - row "Послуга К-сть Сума" [ref=e62]:
+                - columnheader "Послуга" [ref=e63]
+                - columnheader "К-сть" [ref=e64]
+                - columnheader "Сума" [ref=e65]
+            - rowgroup [ref=e66]:
+              - row "Онлайн-курс Як використовувати поведінкову науку, щоб змінювати поведінку людей 1 27 500,00 ₴" [ref=e67]:
+                - cell "Онлайн-курс Як використовувати поведінкову науку, щоб змінювати поведінку людей" [ref=e68]:
+                  - paragraph [ref=e69]: Онлайн-курс
+                  - paragraph [ref=e70]: Як використовувати поведінкову науку, щоб змінювати поведінку людей
+                - cell "1" [ref=e71]
+                - cell "27 500,00 ₴" [ref=e72]
+          - generic [ref=e73]:
+            - paragraph [ref=e74]: До сплати
+            - paragraph [ref=e75]: 27 500,00 ₴
+          - generic [ref=e76]:
+            - paragraph [ref=e77]: "Реквізити для оплати:"
+            - paragraph [ref=e78]: "IBAN: UA12 3456 7890 1234 5678 9012 3456 7"
+            - paragraph [ref=e79]: "ЄДРПОУ: 12345678"
+            - paragraph [ref=e80]: "Отримувач: ТОВ “РУУУШ”"
+            - paragraph [ref=e81]: "Призначення: Оплата за онлайн-курс згідно рахунку INV-20260402-001"
+        - button "Завантажити" [ref=e82]:
+          - generic [ref=e83]:
+            - img [ref=e84]
+            - text: Завантажити
+        - button "Поділитись" [active] [ref=e86]:
+          - generic [ref=e87]:
+            - img [ref=e88]
+            - text: Поділитись
+        - generic [ref=e21]:
+          - paragraph [ref=e22]: Маєте запитання? Будемо раді поспілкуватися
+          - generic [ref=e23]:
+            - link "WhatsApp" [ref=e24] [cursor=pointer]:
+              - /url: https://wa.me/
+              - img [ref=e25]
+            - link "Email" [ref=e27] [cursor=pointer]:
+              - /url: mailto:finance@ruuush.marketing
+              - img [ref=e28]
+  - button "Open Next.js Dev Tools" [ref=e36] [cursor=pointer]:
+    - img [ref=e37]
+  - alert [ref=e40]

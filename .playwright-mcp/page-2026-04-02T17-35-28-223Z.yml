@@ -1,0 +1,41 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]: "-РУУУШ+"
+      - generic [ref=e5]:
+        - button "Увійти" [ref=e6]
+        - button "Menu" [ref=e7]:
+          - img [ref=e8]
+    - main [ref=e9]:
+      - generic [ref=e11]:
+        - button [ref=e12]:
+          - img [ref=e13]
+        - generic [ref=e15]:
+          - img [ref=e17]
+          - paragraph [ref=e19]: Reiseplan
+          - paragraph [ref=e20]: 27 500 ₴
+        - generic [ref=e21]:
+          - img [ref=e23]
+          - generic [ref=e52]:
+            - paragraph [ref=e53]:
+              - text: Оплатити
+              - text: mono
+            - paragraph [ref=e55]: Відскануйте QR-код для оплати платежу у додатку monobank
+        - button "Оплата через Pay" [ref=e56]:
+          - generic [ref=e57]: Оплата через
+          - img [ref=e58]
+          - generic [ref=e60]: Pay
+        - button "G Pay | •••• 2528" [ref=e61]:
+          - generic [ref=e62]: G Pay
+          - generic [ref=e63]: "|"
+          - generic [ref=e66]: •••• 2528
+        - paragraph [ref=e67]: Або оплатити карткою
+        - generic [ref=e68]:
+          - textbox "Номер картки" [ref=e69]
+          - generic [ref=e70]:
+            - textbox "Строк дії" [ref=e71]
+            - textbox "CVC2" [ref=e72]
+        - button "Оплатити 27 500 ₴ →" [disabled] [ref=e73]
+  - button "Open Next.js Dev Tools" [ref=e79] [cursor=pointer]:
+    - img [ref=e80]
+  - alert [ref=e83]

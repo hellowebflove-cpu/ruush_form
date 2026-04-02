@@ -1,0 +1,51 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - img "РУУУШ" [ref=e4]:
+        - generic [ref=e5]: "-РУУУШ+"
+      - generic [ref=e6]:
+        - button "Увійти" [ref=e7]
+        - button "Menu" [ref=e8]:
+          - img [ref=e9]
+    - main [ref=e10]:
+      - generic [ref=e11]:
+        - heading "Оберіть спосіб оплати" [level=1] [ref=e12]
+        - generic [ref=e13]:
+          - button "Оплата за увесь курс 30500 грн 27 500 грн за раннім бронюванням до 16.03.2025" [ref=e14]:
+            - generic [ref=e18]:
+              - generic [ref=e19]: Оплата за увесь курс
+              - generic [ref=e20]:
+                - generic [ref=e21]: 30500 грн
+                - generic [ref=e22]: 27 500 грн
+              - generic [ref=e23]: за раннім бронюванням до 16.03.2025
+          - button "Оплата частинами від Mono 30 500 грн розстрочка до 6 місяців" [ref=e24]:
+            - generic [ref=e27]:
+              - generic [ref=e28]: Оплата частинами від Mono
+              - generic [ref=e30]: 30 500 грн
+              - generic [ref=e31]: розстрочка до 6 місяців
+          - button "Оплата частинами від РУУУШ 30 500 грн поділ на 2 платежі" [ref=e32]:
+            - generic [ref=e35]:
+              - generic [ref=e36]: Оплата частинами від РУУУШ
+              - generic [ref=e38]: 30 500 грн
+              - generic [ref=e39]: поділ на 2 платежі
+          - button "Безготівковий розрахунок для юридичних осіб 30500 грн 27 500 грн за раннім бронюванням до 16.03.2025" [ref=e40]:
+            - generic [ref=e43]:
+              - generic [ref=e44]: Безготівковий розрахунок для юридичних осіб
+              - generic [ref=e45]:
+                - generic [ref=e46]: 30500 грн
+                - generic [ref=e47]: 27 500 грн
+              - generic [ref=e48]: за раннім бронюванням до 16.03.2025
+        - button "У мене є промокод" [ref=e50]
+        - button "Оплатити" [ref=e51]
+        - generic [ref=e52]:
+          - paragraph [ref=e53]: Маєте запитання? Будемо раді поспілкуватися
+          - generic [ref=e54]:
+            - link "WhatsApp" [ref=e55] [cursor=pointer]:
+              - /url: https://wa.me/
+              - img [ref=e56]
+            - link "Email" [ref=e58] [cursor=pointer]:
+              - /url: mailto:finance@ruuush.marketing
+              - img [ref=e59]
+  - button "Open Next.js Dev Tools" [ref=e67] [cursor=pointer]:
+    - img [ref=e68]
+  - alert [ref=e71]
