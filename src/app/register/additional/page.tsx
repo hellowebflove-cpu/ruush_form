@@ -48,7 +48,13 @@ export default function AdditionalInfoPage() {
           : sources,
       })
     );
-    router.push("/register/payment");
+    // If coming from invoice flow, go back to invoice (shows success with PDF)
+    const invoiceData = sessionStorage.getItem("invoice");
+    if (invoiceData) {
+      router.push("/register/invoice");
+    } else {
+      router.push("/register/payment");
+    }
   };
 
   return (

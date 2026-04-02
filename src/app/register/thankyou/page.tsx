@@ -16,7 +16,7 @@ export default function ThankYouPage() {
       </div>
 
       <div className="flex w-full flex-col items-center gap-6">
-        <Button onClick={() => router.push("/register/additional")}>
+        <Button onClick={() => router.push("/register/payment")}>
           Оплатити курс
         </Button>
         <Button

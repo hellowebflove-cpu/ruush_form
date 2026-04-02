@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Footer } from "@/components/Footer";
@@ -111,6 +112,7 @@ function InvoiceDocument({
 }
 
 export default function InvoicePage() {
+  const router = useRouter();
   const [step, setStep] = useState<"form" | "success">("form");
   const [companyName, setCompanyName] = useState("");
   const [error, setError] = useState("");
@@ -127,6 +129,14 @@ export default function InvoicePage() {
         phone: data.phone || "",
       });
     }
+    // If returning from additional info, show invoice success
+    const invoiceData = sessionStorage.getItem("invoice");
+    const additionalData = sessionStorage.getItem("additional");
+    if (invoiceData && additionalData) {
+      const inv = JSON.parse(invoiceData);
+      setCompanyName(inv.companyName || "");
+      setStep("success");
+    }
   }, []);
 
   const handleSubmit = () => {
@@ -136,7 +146,7 @@ export default function InvoicePage() {
     }
     setError("");
     sessionStorage.setItem("invoice", JSON.stringify({ companyName }));
-    setStep("success");
+    router.push("/register/additional");
   };
 
   const handleDownloadPDF = async () => {

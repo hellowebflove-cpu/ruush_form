@@ -68,7 +68,9 @@ export default function PaymentPage() {
         )}
       </div>
 
-      <Button onClick={handleSubmit}>Оплатити</Button>
+      <Button onClick={handleSubmit}>
+        {selected === "invoice" ? "Створити рахунок" : "Оплатити"}
+      </Button>
 
       <Footer />
     </div>
