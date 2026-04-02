@@ -12,17 +12,17 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full">
         <div
-          className={`relative flex h-20 items-center rounded-[20px] bg-bg-input px-6 transition-colors ${
+          className={`relative flex items-center rounded-[20px] bg-bg-input px-7 py-5 transition-colors ${
             error ? "ring-1 ring-border-error" : ""
           } ${className ?? ""}`}
         >
           <input
             ref={ref}
             placeholder={label}
-            className="w-full bg-transparent text-[22px] text-text placeholder:text-text/50 outline-none"
+            className="w-full bg-transparent text-[18px] text-text placeholder:text-text/50 outline-none"
             {...props}
           />
-          <span className="absolute right-6 top-4 text-[22px] text-accent">
+          <span className="absolute right-5 top-2 text-[18px] text-accent">
             *
           </span>
         </div>

@@ -2,9 +2,9 @@ export function Header() {
   return (
     <header className="flex items-center justify-between px-6 py-6 md:px-20">
       {/* Logo as styled text to match Figma exactly */}
-      <span className="text-[28px] font-bold italic text-text leading-none select-none">
+      <a href="/register" className="text-[28px] font-bold italic text-text leading-none select-none hover:opacity-80 transition-opacity">
         -РУУУШ+
-      </span>
+      </a>
 
       <div className="flex items-center gap-4">
         <button className="rounded-full border border-text px-6 py-2 text-[20px] text-text hover:bg-text/10 transition-colors">

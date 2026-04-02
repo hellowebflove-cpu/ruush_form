@@ -1,0 +1,24 @@
+- generic [ref=e6]:
+  - banner [ref=e7]:
+    - generic [ref=e8]: РУУУШ
+    - generic [ref=e9]:
+      - button "Увійти" [ref=e10]
+      - button [ref=e11]:
+        - img [ref=e12]
+  - generic [ref=e16]:
+    - heading "РЕЄСТРАЦІЯ" [level=1] [ref=e17]
+    - paragraph [ref=e18]: Курс "Як використовувати поведінкову науку, щоб змінювати поведінку людей"
+    - generic [ref=e19]:
+      - generic [ref=e21]:
+        - textbox "Марія" [ref=e22]: Тест
+        - generic [ref=e23]: "*"
+      - generic [ref=e25]:
+        - textbox "+ 38 (050) 123 12 12" [ref=e26]
+        - generic [ref=e27]: "*"
+      - generic [ref=e29]:
+        - textbox "test@gmail.com" [ref=e30]: test@test.com
+        - generic [ref=e31]: "*"
+    - generic [ref=e32] [cursor=pointer]:
+      - checkbox "Погоджуюсь з Умовами конфіденційності та Правилами сервісу та Підпискою на новини" [checked] [active] [ref=e33]
+      - generic [ref=e34]: Погоджуюсь з Умовами конфіденційності та Правилами сервісу та Підпискою на новини
+    - button "ЗАРЕЄСТРУВАТИСЬ" [ref=e35]

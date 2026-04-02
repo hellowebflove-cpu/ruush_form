@@ -1,15 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, MessageCircle, Mail, ArrowLeft, CreditCard, Apple } from "lucide-react";
+import { Menu, MessageCircle, Mail, ArrowLeft, CreditCard, Apple, Check, Download, Share2, FileText } from "lucide-react";
+import { jsPDF } from "jspdf";
 import { motion, AnimatePresence } from "motion/react";
 
 function Header() {
   return (
     <header className="flex items-center justify-between px-10 py-6">
-      <div className="text-[#E85B5B] text-[28px] italic" style={{ fontWeight: 800 }}>
+      <a href="/form-b2" className="text-[#E85B5B] text-[28px] italic hover:opacity-80 transition-opacity" style={{ fontWeight: 800 }}>
         РУУУШ
-      </div>
+      </a>
       <div className="flex items-center gap-4">
         <button className="border border-white/20 rounded-full px-6 py-2 text-white text-[14px] hover:bg-white/5 transition">
           Увійти
@@ -243,7 +244,7 @@ const paymentOptions = [
   },
 ];
 
-function StepPayment({ onNext }: { onNext: () => void }) {
+function StepPayment({ onNext, onInvoice }: { onNext: () => void; onInvoice: () => void }) {
   const [selected, setSelected] = useState("full");
   const [promoOpen, setPromoOpen] = useState(false);
   const [promo, setPromo] = useState("");
@@ -305,11 +306,11 @@ function StepPayment({ onNext }: { onNext: () => void }) {
       )}
 
       <button
-        onClick={onNext}
+        onClick={selected === "invoice" ? onInvoice : onNext}
         className="w-full bg-[#E85B5B] text-white py-4 rounded-xl uppercase italic text-[15px] tracking-wider hover:bg-[#d14e4e] transition"
         style={{ fontWeight: 700 }}
       >
-        ОПЛАТИТИ
+        {selected === "invoice" ? "СТВОРИТИ РАХУНОК" : "ОПЛАТИТИ"}
       </button>
 
       <div className="text-center text-white/40 text-[13px] mt-2">
@@ -471,6 +472,445 @@ function StepMonoCheckout({ onBack, onNext }: { onBack: () => void; onNext: () =
   );
 }
 
+// === Invoice Flow ===
+
+const sourceOptions = [
+  "Реклама в соцмережах",
+  "Пост або сторіз",
+  "Розсилка",
+  "Ваш варіант",
+];
+
+function StepInvoiceCompany({ onNext }: { onNext: () => void }) {
+  const [company, setCompany] = useState("");
+
+  return (
+    <div className="flex flex-col gap-8 items-center">
+      <div className="text-center">
+        <h1 className="text-[28px] text-[#d0cac3] italic uppercase" style={{ fontWeight: 800 }}>
+          СТВОРЕННЯ РАХУНКУ
+        </h1>
+        <p className="text-[#d0cac3]/60 text-[14px] mt-3">
+          Вкажіть назву юридичної особи, на яку необхідно створити рахунок
+        </p>
+      </div>
+      <div className="w-full relative">
+        <input
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          placeholder="Юр. особа"
+          className="w-full bg-[#1E1E1E] border border-white/10 rounded-[20px] px-7 py-5 text-[#d0cac3] text-[18px] placeholder-[#d0cac3]/60 outline-none focus:border-[#E85B5B]/50 transition pr-12"
+        />
+        <span className="absolute right-5 top-2 text-[#E85B5B] text-[18px]">*</span>
+      </div>
+      <button
+        onClick={onNext}
+        disabled={!company}
+        className="w-full bg-[#E85B5B] text-white py-5 rounded-full uppercase text-[18px] tracking-wider hover:bg-[#d14e4e] transition disabled:opacity-40 disabled:cursor-not-allowed"
+        style={{ fontWeight: 500 }}
+      >
+        СТВОРИТИ РАХУНОК
+      </button>
+      <p className="text-[#d0cac3] text-[13px] text-left w-full">
+        Якщо вам необхідно створити договір, або індивідуалізувати рахунок напишіть нам на пошту{" "}
+        <span className="text-[#E85B5B]">finance@ruuush.marketing</span>
+      </p>
+      <div className="text-center text-[#d0cac3]/60 text-[13px] mt-4">
+        Маєте запитання? Будемо раді поспілкуватися
+      </div>
+      <div className="flex justify-center gap-6">
+        <div className="w-12 h-12 bg-[#1E1E1E] rounded-full flex items-center justify-center">
+          <MessageCircle size={20} className="text-[#E85B5B]" />
+        </div>
+        <div className="w-12 h-12 bg-[#1E1E1E] rounded-full flex items-center justify-center">
+          <Mail size={20} className="text-[#E85B5B]" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StepInvoiceDetails({ onNext }: { onNext: () => void }) {
+  const [fullName, setFullName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [position, setPosition] = useState("");
+  const [sources, setSources] = useState<string[]>([]);
+
+  const toggleSource = (s: string) => {
+    setSources((prev) =>
+      prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]
+    );
+  };
+
+  return (
+    <div className="flex flex-col gap-8 items-center">
+      <div className="text-center">
+        <h1 className="text-[28px] text-[#d0cac3] italic uppercase" style={{ fontWeight: 800 }}>
+          ВАС ЗАРЕЄСТРОВАНО
+        </h1>
+        <p className="text-[#d0cac3]/60 text-[14px] mt-3">
+          Заповніть додаткову інформацію
+        </p>
+      </div>
+      <div className="flex flex-col gap-4 w-full">
+        <div className="relative">
+          <input
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            placeholder="Олена Денисенко"
+            className="w-full bg-[#1E1E1E] border border-white/10 rounded-[20px] px-7 py-5 text-[#d0cac3] text-[18px] placeholder-[#d0cac3]/60 outline-none focus:border-[#E85B5B]/50 transition pr-12"
+          />
+          <span className="absolute right-5 top-2 text-[#E85B5B] text-[18px]">*</span>
+        </div>
+        <div className="relative">
+          <input
+            value={companyName}
+            onChange={(e) => setCompanyName(e.target.value)}
+            placeholder="Компанія"
+            className="w-full bg-[#1E1E1E] border border-white/10 rounded-[20px] px-7 py-5 text-[#d0cac3] text-[18px] placeholder-[#d0cac3]/60 outline-none focus:border-[#E85B5B]/50 transition pr-12"
+          />
+          <span className="absolute right-5 top-2 text-[#E85B5B] text-[18px]">*</span>
+        </div>
+        <div className="relative">
+          <input
+            value={position}
+            onChange={(e) => setPosition(e.target.value)}
+            placeholder="Посада"
+            className="w-full bg-[#1E1E1E] border border-white/10 rounded-[20px] px-7 py-5 text-[#d0cac3] text-[18px] placeholder-[#d0cac3]/60 outline-none focus:border-[#E85B5B]/50 transition pr-12"
+          />
+          <span className="absolute right-5 top-2 text-[#E85B5B] text-[18px]">*</span>
+        </div>
+
+        <div className="bg-[#1E1E1E] rounded-[16px] p-6 w-full">
+          <p className="text-[#d0cac3] text-[15px] mb-5" style={{ fontWeight: 600 }}>
+            Як ви дізналися про курс?
+          </p>
+          <div className="flex flex-col gap-4">
+            {sourceOptions.map((opt) => {
+              const isChecked = sources.includes(opt);
+              return (
+                <label key={opt} className="flex items-center gap-3 cursor-pointer">
+                  <div
+                    className={`w-5 h-5 rounded flex items-center justify-center shrink-0 ${
+                      isChecked
+                        ? "bg-[#E85B5B]"
+                        : "bg-[#1E1E1E] border border-[#E85B5B]"
+                    }`}
+                    onClick={() => toggleSource(opt)}
+                  >
+                    {isChecked && <Check size={13} className="text-white" />}
+                  </div>
+                  <span className="text-[#d0cac3] text-[14px]">{opt}</span>
+                </label>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      <button
+        onClick={onNext}
+        disabled={!fullName || !companyName || !position}
+        className="w-full bg-[#E85B5B] text-white py-5 rounded-full uppercase text-[18px] tracking-wider hover:bg-[#d14e4e] transition disabled:opacity-40 disabled:cursor-not-allowed"
+        style={{ fontWeight: 500 }}
+      >
+        НАДІСЛАТИ
+      </button>
+    </div>
+  );
+}
+
+function generateInvoicePDF() {
+  const doc = new jsPDF({ unit: "mm", format: "a4" });
+  const today = new Date();
+  const dateStr = `${String(today.getDate()).padStart(2, "0")}.${String(today.getMonth() + 1).padStart(2, "0")}.${today.getFullYear()}`;
+  const invoiceNum = `РХ-${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}-001`;
+  const W = 210;
+
+  doc.setFillColor(232, 91, 91);
+  doc.rect(0, 0, W, 38, "F");
+
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(26);
+  doc.setFont("helvetica", "bold");
+  doc.text("RUUUSH", 20, 22);
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "normal");
+  doc.text("Marketing Education Platform", 20, 30);
+
+  doc.setFontSize(12);
+  doc.setFont("helvetica", "bold");
+  doc.text("PAHYHOK", W - 20, 18, { align: "right" });
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "normal");
+  doc.text(`No ${invoiceNum}`, W - 20, 25, { align: "right" });
+  doc.text(`vid ${dateStr}`, W - 20, 31, { align: "right" });
+
+  let y = 48;
+
+  doc.setTextColor(100, 100, 100);
+  doc.setFontSize(8);
+  doc.text("POSTACHALNIK", 20, y);
+  doc.setTextColor(30, 30, 30);
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "bold");
+  doc.text('TOV "RUUUSH MARKETING"', 20, y + 6);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(8);
+  doc.setTextColor(100, 100, 100);
+  doc.text("EDRPOU: 44556677", 20, y + 12);
+  doc.text("m. Kyiv, vul. Khreschatyk, 1", 20, y + 17);
+  doc.text("Tel.: +380 (50) 123 45 67", 20, y + 22);
+  doc.text("Email: finance@ruuush.marketing", 20, y + 27);
+
+  doc.setTextColor(100, 100, 100);
+  doc.setFontSize(8);
+  doc.text("ZAMOVNIK", W / 2 + 10, y);
+  doc.setTextColor(30, 30, 30);
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "bold");
+  doc.text('TOV "Innovatsiyni Rishennya"', W / 2 + 10, y + 6);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(8);
+  doc.setTextColor(100, 100, 100);
+  doc.text("EDRPOU: 12345678", W / 2 + 10, y + 12);
+  doc.text("m. Kyiv, vul. Shevchenko, 10", W / 2 + 10, y + 17);
+
+  y = 88;
+  doc.setDrawColor(220, 220, 220);
+  doc.setLineWidth(0.3);
+  doc.line(20, y, W - 20, y);
+
+  y = 96;
+  doc.setFillColor(245, 245, 245);
+  doc.rect(20, y - 4, W - 40, 10, "F");
+  doc.setTextColor(100, 100, 100);
+  doc.setFontSize(8);
+  doc.setFont("helvetica", "bold");
+  doc.text("No", 24, y + 2);
+  doc.text("Posluha", 36, y + 2);
+  doc.text("K-st", 130, y + 2, { align: "center" });
+  doc.text("Tsina", 155, y + 2, { align: "right" });
+  doc.text("Suma", W - 24, y + 2, { align: "right" });
+
+  y = 110;
+  doc.setFont("helvetica", "normal");
+  doc.setTextColor(30, 30, 30);
+  doc.setFontSize(9);
+  doc.text("1", 24, y);
+  doc.text('Kurs "Povedinkova nauka: yak', 36, y);
+  doc.text("zminyuvaty povedinku lyudey", 36, y + 5);
+  doc.text("1", 130, y, { align: "center" });
+  doc.text("27 500,00", 155, y, { align: "right" });
+  doc.setFont("helvetica", "bold");
+  doc.text("27 500,00", W - 24, y, { align: "right" });
+
+  y = 122;
+  doc.setDrawColor(220, 220, 220);
+  doc.line(20, y, W - 20, y);
+
+  y = 132;
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(9);
+  doc.setTextColor(100, 100, 100);
+  doc.text("Vsogo bez PDV:", 130, y);
+  doc.setTextColor(30, 30, 30);
+  doc.setFont("helvetica", "bold");
+  doc.text("27 500,00 UAH", W - 24, y, { align: "right" });
+
+  y += 8;
+  doc.setTextColor(100, 100, 100);
+  doc.setFont("helvetica", "normal");
+  doc.text("PDV (ne platnyk):", 130, y);
+  doc.setTextColor(30, 30, 30);
+  doc.setFont("helvetica", "bold");
+  doc.text("0,00 UAH", W - 24, y, { align: "right" });
+
+  y += 14;
+  doc.setFillColor(232, 91, 91);
+  doc.roundedRect(110, y - 6, W - 130, 14, 3, 3, "F");
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(11);
+  doc.text("Do splaty:  27 500,00 UAH", W / 2 + 30, y + 3, { align: "center" });
+
+  y += 24;
+  doc.setTextColor(100, 100, 100);
+  doc.setFontSize(8);
+  doc.setFont("helvetica", "bold");
+  doc.text("REKVIZITY DLYA OPLATY", 20, y);
+  doc.setFont("helvetica", "normal");
+  y += 7;
+  doc.setTextColor(60, 60, 60);
+  doc.text("Otrymuvach: TOV \"RUUUSH MARKETING\"", 20, y);
+  y += 5;
+  doc.text("IBAN: UA12 3456 7890 1234 5678 9012 3456 7", 20, y);
+  y += 5;
+  doc.text('Bank: AT "PrivatBank", m. Kyiv', 20, y);
+  y += 5;
+  doc.text("EDRPOU: 44556677", 20, y);
+  y += 5;
+  doc.text(`Pryznachennya platezhu: oplata za kurs zgidno rakhunku ${invoiceNum} vid ${dateStr}`, 20, y);
+
+  y = 230;
+  doc.setDrawColor(200, 200, 200);
+  doc.line(20, y, 90, y);
+  doc.line(120, y, 190, y);
+  doc.setTextColor(150, 150, 150);
+  doc.setFontSize(7);
+  doc.text("Pidpys postachalnika", 55, y + 5, { align: "center" });
+  doc.text("Pidpys zamovnyka", 155, y + 5, { align: "center" });
+
+  doc.setDrawColor(232, 91, 91);
+  doc.setLineWidth(0.8);
+  doc.circle(55, y - 15, 12);
+  doc.setTextColor(232, 91, 91);
+  doc.setFontSize(6);
+  doc.setFont("helvetica", "bold");
+  doc.text("RUUUSH", 55, y - 17, { align: "center" });
+  doc.text("MARKETING", 55, y - 12, { align: "center" });
+  doc.setFontSize(5);
+  doc.setFont("helvetica", "normal");
+  doc.text("M.P.", 55, y - 8, { align: "center" });
+
+  doc.setTextColor(180, 180, 180);
+  doc.setFontSize(7);
+  doc.text("Tsey rakhunok ye diyisnym protayahom 5 bankivskyh dniv.", W / 2, 280, { align: "center" });
+  doc.text("finance@ruuush.marketing  |  ruuush.marketing", W / 2, 285, { align: "center" });
+
+  doc.save(`Rakhunok_${invoiceNum}.pdf`);
+}
+
+function InvoiceDocument() {
+  const today = new Date();
+  const invoiceNum = `РХ-${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}-001`;
+
+  return (
+    <div className="bg-white rounded-[16px] p-6 w-full text-black overflow-hidden shadow-lg">
+      <div className="flex items-start justify-between mb-5 pb-4 border-b border-gray-200">
+        <div>
+          <div className="text-[#E85B5B] text-[22px] italic" style={{ fontWeight: 800 }}>
+            РУУУШ
+          </div>
+          <p className="text-gray-400 text-[10px] mt-1">ТОВ &laquo;РУУУШ МАРКЕТИНГ&raquo;</p>
+          <p className="text-gray-400 text-[10px]">ЄДРПОУ: 44556677</p>
+        </div>
+        <div className="text-right">
+          <div className="flex items-center gap-1.5 justify-end">
+            <FileText size={14} className="text-gray-400" />
+            <span className="text-[11px] text-gray-500" style={{ fontWeight: 600 }}>РАХУНОК</span>
+          </div>
+          <p className="text-[10px] text-gray-400 mt-1">&#8470; {invoiceNum}</p>
+          <p className="text-[10px] text-gray-400">
+            від {String(today.getDate()).padStart(2, "0")}.{String(today.getMonth() + 1).padStart(2, "0")}.{today.getFullYear()}
+          </p>
+        </div>
+      </div>
+
+      <div className="mb-4 pb-3 border-b border-gray-100">
+        <p className="text-[9px] text-gray-400 uppercase tracking-wider mb-1">Замовник</p>
+        <p className="text-[11px]" style={{ fontWeight: 600 }}>ТОВ &laquo;Інноваційні Рішення&raquo;</p>
+        <p className="text-[10px] text-gray-500">ЄДРПОУ: 12345678</p>
+      </div>
+
+      <table className="w-full mb-4 text-[10px]">
+        <thead>
+          <tr className="border-b border-gray-200">
+            <th className="text-left py-2 text-gray-400" style={{ fontWeight: 500 }}>Послуга</th>
+            <th className="text-center py-2 text-gray-400 w-10" style={{ fontWeight: 500 }}>К-сть</th>
+            <th className="text-right py-2 text-gray-400" style={{ fontWeight: 500 }}>Сума</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-b border-gray-100">
+            <td className="py-2.5 pr-2">
+              <p style={{ fontWeight: 500 }}>Курс &laquo;Поведінкова наука&raquo;</p>
+              <p className="text-gray-400 text-[9px]">Як змінювати поведінку людей</p>
+            </td>
+            <td className="text-center py-2.5">1</td>
+            <td className="text-right py-2.5 whitespace-nowrap" style={{ fontWeight: 600 }}>27 500,00 ₴</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div className="flex justify-between items-center pt-2 border-t border-gray-200">
+        <div>
+          <p className="text-[9px] text-gray-400">Без ПДВ</p>
+        </div>
+        <div className="text-right">
+          <p className="text-[9px] text-gray-400 mb-0.5">До сплати:</p>
+          <p className="text-[16px] text-[#E85B5B]" style={{ fontWeight: 700 }}>27 500,00 ₴</p>
+        </div>
+      </div>
+
+      <div className="mt-4 pt-3 border-t border-dashed border-gray-200 flex items-center justify-between">
+        <div>
+          <p className="text-[9px] text-gray-400">Підпис _________________</p>
+        </div>
+        <div className="relative">
+          <div className="w-14 h-14 rounded-full border-2 border-[#E85B5B]/30 flex items-center justify-center rotate-[-12deg]">
+            <span className="text-[#E85B5B]/50 text-[7px] text-center" style={{ fontWeight: 700 }}>
+              РУУУШ<br />М.П.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StepInvoiceCreated({ onHome }: { onHome: () => void }) {
+  return (
+    <div className="flex flex-col gap-6 items-center">
+      <div className="text-center">
+        <h1 className="text-[28px] text-[#d0cac3] italic uppercase" style={{ fontWeight: 800 }}>
+          РАХУНОК СТВОРЕНО
+        </h1>
+        <p className="text-[#d0cac3]/60 text-[14px] mt-3">
+          Ваш рахунок готовий до завантаження та оплати
+        </p>
+      </div>
+
+      <InvoiceDocument />
+
+      <button
+        className="w-full bg-[#E85B5B] text-white py-5 rounded-full uppercase text-[18px] tracking-wider flex items-center justify-center gap-3 hover:bg-[#d14e4e] transition"
+        style={{ fontWeight: 500 }}
+        onClick={generateInvoicePDF}
+      >
+        <Download size={22} />
+        ЗАВАНТАЖИТИ
+      </button>
+
+      <button
+        className="w-full border border-[#E85B5B] text-white py-5 rounded-full uppercase text-[18px] tracking-wider flex items-center justify-center gap-3 hover:bg-[#E85B5B]/10 transition"
+        style={{ fontWeight: 500 }}
+        onClick={async () => {
+          if (navigator.share) {
+            await navigator.share({ title: "Рахунок РУУУШ", text: "Рахунок на суму 27 500 грн за онлайн-курс РУУУШ" });
+          } else {
+            await navigator.clipboard.writeText("Рахунок на суму 27 500 грн за онлайн-курс РУУУШ. Деталі: finance@ruuush.marketing");
+            alert("Скопійовано в буфер обміну");
+          }
+        }}
+      >
+        <Share2 size={22} />
+        ПОДІЛИТИСЬ
+      </button>
+
+      <div className="text-center text-[#d0cac3]/60 text-[13px] mt-4">
+        Маєте запитання? Будемо раді поспілкуватися
+      </div>
+      <div className="flex justify-center gap-6">
+        <div className="w-12 h-12 bg-[#1E1E1E] rounded-full flex items-center justify-center">
+          <MessageCircle size={20} className="text-[#E85B5B]" />
+        </div>
+        <div className="w-12 h-12 bg-[#1E1E1E] rounded-full flex items-center justify-center">
+          <Mail size={20} className="text-[#E85B5B]" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function StepSuccess() {
   return (
     <div className="flex flex-col gap-6 items-center text-center">
@@ -497,9 +937,12 @@ export default function FormB2Page() {
   const steps = [
     <StepRegistration key="reg" onNext={() => setStep(1)} />,
     <StepThankYou key="thanks" onPay={() => setStep(2)} onContact={() => setStep(4)} />,
-    <StepPayment key="pay" onNext={() => setStep(3)} />,
+    <StepPayment key="pay" onNext={() => setStep(3)} onInvoice={() => setStep(5)} />,
     <StepMonoCheckout key="mono" onBack={() => setStep(2)} onNext={() => setStep(4)} />,
     <StepSuccess key="success" />,
+    <StepInvoiceCompany key="inv1" onNext={() => setStep(6)} />,
+    <StepInvoiceDetails key="inv2" onNext={() => setStep(7)} />,
+    <StepInvoiceCreated key="inv3" onHome={() => window.location.reload()} />,
   ];
 
   return (

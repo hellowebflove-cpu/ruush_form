@@ -26,7 +26,7 @@ export function Footer() {
           </svg>
         </a>
         <a
-          href="mailto:finance@ruuush.marketing"
+          href="mailto:hello@ruuush.marketing"
           className="flex size-16 items-center justify-center rounded-full bg-bg-input transition-colors hover:bg-bg-input/80"
           aria-label="Email"
         >

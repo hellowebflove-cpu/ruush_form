@@ -13,6 +13,13 @@ export const metadata: Metadata = {
   title: "РУУУШ — Реєстрація на курс",
   description:
     'Курс "Як використовувати поведінкову науку, щоб змінювати поведінку людей"',
+  icons: {
+    icon: "/favicon.jpg",
+    apple: "/apple-touch-icon.jpg",
+  },
+  openGraph: {
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
