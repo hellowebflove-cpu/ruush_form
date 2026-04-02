@@ -176,10 +176,10 @@ export default function InvoicePage() {
     return (
       <div className="flex w-full max-w-[641px] flex-col items-center gap-12 pt-8 pb-8">
         <div className="flex w-full max-w-[572px] flex-col items-center gap-5 text-center">
-          <h1 className="text-[52px] font-bold italic uppercase leading-tight text-text">
+          <h1 className="text-[28px] font-bold italic uppercase leading-tight text-text">
             Рахунок створено
           </h1>
-          <p className="text-[22px] leading-[1.5] text-text/60">
+          <p className="text-[14px] text-text/60">
             Завантажте рахунок або поділіться ним
           </p>
         </div>
@@ -239,10 +239,10 @@ export default function InvoicePage() {
   return (
     <div className="flex w-full max-w-[641px] flex-col items-center gap-12 pt-8 pb-8">
       <div className="flex w-full max-w-[572px] flex-col items-center gap-5 text-center">
-        <h1 className="text-[52px] font-bold italic uppercase leading-tight text-text">
+        <h1 className="text-[28px] font-bold italic uppercase leading-tight text-text">
           Створення рахунку
         </h1>
-        <p className="text-[22px] leading-[1.5] text-text/60">
+        <p className="text-[14px] text-text/60">
           Вкажіть назву юридичної особи, на яку необхідно створити рахунок
         </p>
       </div>
@@ -259,7 +259,7 @@ export default function InvoicePage() {
         />
       </div>
 
-      <p className="max-w-[600px] text-center text-[22px] leading-[1.5] text-text/60">
+      <p className="max-w-[600px] text-center text-[13px] text-text/60">
         Якщо вам необхідно створити договір, або індивідуалізувати рахунок
         напишіть нам на пошту{" "}
         <span className="text-accent">finance@ruuush.marketing</span>

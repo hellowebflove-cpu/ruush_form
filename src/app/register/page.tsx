@@ -46,10 +46,10 @@ export default function RegisterPage() {
     <div className="flex w-full max-w-[600px] flex-col items-center gap-12 pt-8 pb-16">
       {/* Heading */}
       <div className="flex flex-col items-center gap-5 text-center">
-        <h1 className="text-[52px] font-bold italic uppercase leading-tight text-text">
+        <h1 className="text-[32px] font-bold italic uppercase leading-tight text-text">
           Реєстрація
         </h1>
-        <p className="max-w-[572px] text-[22px] text-text">
+        <p className="max-w-[572px] text-[14px] text-text/60">
           Курс &ldquo;Як використовувати поведінкову науку, щоб змінювати
           поведінку людей&rdquo;
         </p>

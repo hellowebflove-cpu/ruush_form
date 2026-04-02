@@ -127,6 +127,8 @@ function StepRegistration({ onNext }: { onNext: () => void }) {
                 setTouched((p) => ({ ...p, phone: true }));
                 if (phoneDigits.length < 9) setErrors((p) => ({ ...p, phone: "Введіть коректний номер телефону" }));
               }}
+              type="tel"
+              inputMode="numeric"
               placeholder="+ 38 (050) 123 12 12"
               className={`w-full bg-[#1E1E1E] border rounded-[20px] px-7 py-5 text-[#d0cac3] text-[18px] placeholder-white/20 outline-none transition pr-12 ${
                 errors.phone ? "border-[#E85B5B]" : "border-white/10 focus:border-[#E85B5B]/50"

@@ -27,7 +27,7 @@ export default function PaymentPage() {
 
   return (
     <div className="flex w-full max-w-[641px] flex-col items-center gap-8 pt-8 pb-8">
-      <h1 className="text-center text-[52px] font-bold italic uppercase leading-tight text-text">
+      <h1 className="text-center text-[28px] font-bold italic uppercase leading-tight text-text">
         Оберіть спосіб оплати
       </h1>
 
@@ -51,7 +51,7 @@ export default function PaymentPage() {
           <button
             type="button"
             onClick={() => setShowPromo(true)}
-            className="w-full rounded-[20px] bg-bg-input px-6 py-5 text-left text-[22px] italic text-text/50 transition-colors hover:bg-bg-input/80"
+            className="w-full rounded-xl bg-bg-input px-4 py-3 text-left text-[14px] text-text/50 transition-colors hover:bg-bg-input/80"
           >
             У мене є промокод
           </button>
@@ -61,7 +61,7 @@ export default function PaymentPage() {
               value={promoCode}
               onChange={(e) => setPromoCode(e.target.value)}
               placeholder="Введіть промокод"
-              className="w-full bg-transparent text-[22px] text-text placeholder:text-text/50 outline-none"
+              className="w-full bg-transparent text-[14px] text-text placeholder:text-text/30 outline-none"
               autoFocus
             />
           </div>

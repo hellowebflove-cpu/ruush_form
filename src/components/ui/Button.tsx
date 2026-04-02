@@ -10,7 +10,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "w-full max-w-[501px] py-5 rounded-full text-[18px] uppercase tracking-wide transition-all";
+    "w-full max-w-[501px] py-4 rounded-xl text-[15px] uppercase italic tracking-wider transition-all font-bold";
 
   const variants = {
     primary:

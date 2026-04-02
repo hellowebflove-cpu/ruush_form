@@ -55,10 +55,10 @@ export default function AdditionalInfoPage() {
     <div className="flex w-full max-w-[641px] flex-col items-center gap-12 pt-8 pb-8">
       {/* Header */}
       <div className="flex w-full max-w-[572px] flex-col items-center gap-5 text-center">
-        <h1 className="text-[52px] font-bold italic uppercase leading-tight text-text">
+        <h1 className="text-[28px] font-bold italic uppercase leading-tight text-text">
           Вас зареєстровано
         </h1>
-        <p className="text-[22px] text-text/60">
+        <p className="text-[14px] text-text/60">
           Заповніть додаткову інформацію
         </p>
       </div>
@@ -83,7 +83,7 @@ export default function AdditionalInfoPage() {
 
         {/* How did you learn about the course? */}
         <div className="rounded-[20px] bg-bg-input p-6">
-          <p className="mb-5 text-[22px] font-medium text-text">
+          <p className="mb-5 text-[15px] font-semibold text-text">
             Як ви дізналися про курс?
           </p>
           <div className="flex flex-col gap-4">
@@ -112,7 +112,7 @@ export default function AdditionalInfoPage() {
                     <path d="M3 8l3.5 3.5L13 5" />
                   </svg>
                 </div>
-                <span className="text-[22px] text-text">{source}</span>
+                <span className="text-[14px] text-text">{source}</span>
               </label>
             ))}
             {sources.includes("Ваш варіант") && (

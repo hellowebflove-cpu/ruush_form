@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer className="mt-auto flex flex-col items-center gap-8 pb-12 pt-8">
-      <p className="text-[22px] text-text">
+      <p className="text-[13px] text-text/40">
         Маєте запитання? Будемо раді поспілкуватися
       </p>
       <div className="flex items-center gap-6">
@@ -9,12 +9,12 @@ export function Footer() {
           href="https://wa.me/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex size-16 items-center justify-center rounded-full bg-bg-input transition-colors hover:bg-bg-input/80"
+          className="flex size-12 items-center justify-center rounded-full bg-bg-input transition-colors hover:bg-bg-input/80"
           aria-label="WhatsApp"
         >
           <svg
-            width="28"
-            height="28"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="#E74C41"
@@ -27,12 +27,12 @@ export function Footer() {
         </a>
         <a
           href="mailto:hello@ruuush.marketing"
-          className="flex size-16 items-center justify-center rounded-full bg-bg-input transition-colors hover:bg-bg-input/80"
+          className="flex size-12 items-center justify-center rounded-full bg-bg-input transition-colors hover:bg-bg-input/80"
           aria-label="Email"
         >
           <svg
-            width="28"
-            height="28"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="#E74C41"
